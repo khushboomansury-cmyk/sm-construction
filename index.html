@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SM Construction: Building strong foundations across residential, commercial, industrial, and infrastructure sectors.">
+  <title>SM Construction</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- AOS for Animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #333;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #0a2540;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+      transition: padding 0.3s ease;
+    }
+
+    header h1 {
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f9b233;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(10,37,64,0.7), rgba(10,37,64,0.7)),
+                  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10,37,64,0.3);
+      z-index: 1;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h2 {
+      font-size: 46px;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #f9b233, #e0a01f);
+      color: black;
+      padding: 14px 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(249, 178, 51, 0.4);
+    }
+
+    /* ===== SERVICES ===== */
+    section {
+      padding: 80px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h3 {
+      font-size: 36px;
+      color: #0a2540;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .service-card i {
+      font-size: 40px;
+      color: #f9b233;
+      margin-bottom: 15px;
+    }
+
+    .service-card h4 {
+      margin-bottom: 15px;
+      color: #0a2540;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: white;
+      border-radius: 10px;
+      padding: 50px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      line-height: 1.8;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0a2540;
+      color: white;
+      padding: 50px 8%;
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .contact-item i {
+      margin-right: 10px;
+      color: #f9b233;
+    }
+
+    .contact-form {
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      background: #f9b233;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width: 768px) {
+      .hero h2 {
+        font-size: 34px;
+      }
+      .services {
+        grid-template-columns: 1fr;
+      }
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- AOS Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- HEADER -->
+  <header>
+    <h1>SM CONSTRUCTION</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h2>Building Strong Foundations for the Future</h2>
+      <p>
+        SM Construction is a trusted name in the construction industry,
+        delivering high-quality projects across residential, commercial,
+        industrial and infrastructure sectors.
+      </p>
+      <a href="#services" class="btn">Our Projects</a>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" data-aos="fade-up">
+    <div class="section-title">
+      <h3>Our Services</h3>
+    </div>
+
+    <div class="services">
+      <div class="service-card">
+        <i class="fas fa-home"></i>
+        <h4>Residential Construction</h4>
+        <p>High-quality homes, apartments and housing projects built with precision and durability.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-building"></i>
+        <h4>Commercial Projects</h4>
+        <p>Offices, malls, and commercial spaces designed for modern business needs.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-industry"></i>
+        <h4>Industrial Construction</h4>
+        <p>Factories, warehouses and industrial infrastructure with safety and strength.</p>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-road"></i>
+        <h4>Infrastructure Work</h4>
+        <p>Roads, bridges, airports and large-scale civil engineering projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" data-aos="fade-up">
+    <div class="section-title">
+      <h3>About SM Construction</h3>
+    </div>
+
+    <div class="about">
+      <p>
+        With years of experience in the construction industry, SM Construction
+        has successfully delivered projects across multiple sectors.
+        Our commitment to quality, safety, and timely delivery makes us a
+        reliable partner for small and large-scale projects alike.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <h3 style="margin-bottom: 20px; color: #f9b233;">Contact Us</h3>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span>Mobile: 8949482830 / 6375284076</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>Email: smcontructionkota@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Address: Rajasthan, Kota, Borkhera, Shree Kalyan Vihar, House No. 32</span>
+      </div>
+    </div>
+    <p>© 2026 SM Construction. All Rights Reserved.</p>
+    <p>Building Trust. Delivering Excellence.</p>
+    <div class="contact-form">
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </footer>
+
+</body>
+</html>
